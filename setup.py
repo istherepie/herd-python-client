@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="istherepie-herdpy", # Replace with your own username
-    version="0.0.1",
+    name="herdpy", # Replace with your own username
+    version="0.0.2",
     author="Steffen Park",
     author_email="dev@istherepie.com",
     description="Building a project herd client library",
