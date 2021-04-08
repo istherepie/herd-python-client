@@ -11,7 +11,7 @@ class Report:
     severity: int = 5
     ttl: int = 0
 
-    def __init__(self, client: Client):
+    def __init__(self, client: Session):
         self.client = client
 
     def add_tag(self, tag: str):
