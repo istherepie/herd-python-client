@@ -3,7 +3,7 @@
 Drafting a `project herd` client library
 
 ## CHANGE 
-Jira integration
+Jira integrationasdfasdf
 
 
 ## Usage
