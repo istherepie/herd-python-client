@@ -4,7 +4,7 @@ Drafting a `project herd` client library
 
 ## CHANGE 
 Jira asdfasdfas
-sdfsdf
+
 
 ## Usage
 
