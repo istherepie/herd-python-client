@@ -3,8 +3,8 @@ from requests import Session
 
 class Report:
     url: str
-    node_name: str
-    group: str = "NOGROUP"
+    label: str
+    system: str = "NOGROUP"
     status_code: str = "OK"
     description: str = "No description given."
     tags: List[str] = []
@@ -25,17 +25,17 @@ class Report:
         if not self.url:
             raise ValueError("report.url must be set")
 
-        if not self.node_name:
-            raise ValueError("Report source or node_name must be set")
+        if not self.label:
+            raise ValueError("Report label must be set")
 
 
     def send(self) -> None:
         self.validate()
 
         payload: Dict = {
-            "id": self.node_name,
-            "group": self.group,
-            "status_code": self.status_code,
+            "label": self.label,
+            "system": self.system,
+            "statusCode": self.status_code,
             "description": self.description,
             "severity": self.severity,
             "ttl": self.ttl
