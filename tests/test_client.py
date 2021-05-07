@@ -16,8 +16,8 @@ def test_client():
     r = Report(sess)
 
     r.url = "http://nowhere.local"
-    r.node_name = "testclient"
-    r.group = "testgroup"
+    r.label = "testclient"
+    r.system = "testgroup"
     r.status_code = "E200OK"
     r.add_tag("test")
     r.add_tag("dev")

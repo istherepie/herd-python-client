@@ -19,8 +19,8 @@ Use the `new_report` helper to create and send reports to the herd server:
 	r = new_report()
 
 	r.url = "http://nowhere.local"
-	r.node_name = "testclient"
-	r.group = "testgroup"
+	r.label = "mycheck"
+	r.system = "myhost"
 	r.status_code = "E200OK"
 
 	r.add_tag("test")
@@ -36,7 +36,7 @@ More to come...
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MPL2.0 License. See `LICENSE` for more information.
 
 
 ## Author
