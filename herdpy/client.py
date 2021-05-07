@@ -37,6 +37,7 @@ class Report:
             "system": self.system,
             "statusCode": self.status_code,
             "description": self.description,
+            "tags": self.tags,
             "severity": self.severity,
             "ttl": self.ttl
         }
