@@ -1,5 +1,6 @@
 from typing import List, Dict
 from requests import Session
+from urllib.parse import urljoin
 
 class Report:
     url: str
@@ -13,6 +14,10 @@ class Report:
 
     def __init__(self, client: Session):
         self.client = client
+
+    @property
+    def endpoint(self):
+        return urljoin(self.url, "/api/report")
 
     def add_tag(self, tag: str):
         if tag in self.tags:
@@ -28,7 +33,6 @@ class Report:
         if not self.label:
             raise ValueError("Report label must be set")
 
-
     def send(self) -> None:
         self.validate()
 
@@ -42,7 +46,7 @@ class Report:
             "ttl": self.ttl
         }
 
-        response = self.client.post(url=self.url, json=payload)
+        response = self.client.post(url=self.endpoint, json=payload)
         
         if response.status_code == 200:
             return
