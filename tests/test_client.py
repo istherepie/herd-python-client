@@ -23,3 +23,14 @@ def test_client():
     r.add_tag("dev")
 
     r.send() # This should not raise an exception
+
+def test_client_endpoint():
+
+    sess = FakeSession()
+
+    r = Report(sess)
+    r.url = "http://nowhere.local"
+   
+    expected = "http://nowhere.local/api/report"
+
+    assert r.endpoint == expected
